@@ -17,6 +17,7 @@
     "font-awesome": "^4.7.0",
     "formik": "^1.5.8",
     "jwt-decode": "^2.2.0",
+    "mio-library-autenticacao": "^1.0.0",
     "mui-datatables": "^2.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",

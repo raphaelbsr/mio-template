@@ -1,24 +1,10 @@
-import React, { useState } from "react";
-import {
-  CardHeader,
-  CardContent,
-  TextField,
-  Button,
-  Grid,
-  CircularProgress
-} from "@material-ui/core";
-import { ErrorMessage, Autenticacao } from "~/components/index";
-import {
-  Container,
-  Top,
-  Bottom,
-  LogoContent,
-  LoginCard,
-  LoginContent,
-  Form
-} from "./styles";
+import React from "react";
+// import { Autenticacao } from "~/components/index";
+import { Container, Top, Bottom, LogoContent, LoginContent } from "./styles";
 import Logo from "~/assets/images/Logo.png";
 import Logo2x from "~/assets/images/Logo@2x.png";
+
+import { Autenticacao } from "mio-library-autenticacao";
 
 const Login = props => {
   return (
@@ -33,8 +19,9 @@ const Login = props => {
           <Autenticacao
             antesDeEntrar={() => {}}
             depoisDeEntrar={status => {
-              console.log(status);
-              //props.history.push("/home");
+              if (status.status) {
+                props.history.push("/home");
+              }
             }}
           />
         </LoginContent>

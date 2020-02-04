@@ -1,10 +1,10 @@
 import React from "react";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import { isAuthenticated } from "~/components/Autenticacao/services/auth";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
+import { isAuthenticated } from "mio-library-autenticacao";
 
 const PrivateRoute = ({ component: Component, title, ...rest }) => (
   <Route

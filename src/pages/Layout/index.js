@@ -22,7 +22,7 @@ import Paper from "@material-ui/core/Paper";
 import Slide from "@material-ui/core/Slide";
 import LeftMenu from "./LeftMenu";
 import LeftMenuCadastros from "./LeftMenuCadastros";
-import { getData, logout } from "~/components/Autenticacao/services/auth";
+import { getData, logout } from "mio-library-autenticacao";
 import logoTopo from "../../assets/images/logoTopo.svg";
 
 const drawerWidth = 120;
