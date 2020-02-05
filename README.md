@@ -1,68 +1,107 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# create-react-app mio template
 
-## Available Scripts
+> Create React App Template for MIO Applications
 
-In the project directory, you can run:
+## Plug and Play
 
-### `yarn start`
+```sh
+npx create-react-app my-app --template mio
+cd my-app
+npm start
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then open http://localhost:3000/ to see your app.
+When you’re ready to deploy to production, create a minified bundle with npm run build.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+It will create a directory called `my-app` inside the current folder.<br>
+Inside that directory, it will generate the initial project structure and install the transitive dependencies:
 
-### `yarn test`
+```
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── .Dockerfile
+├── .dockerignore
+├── .env
+├── .eslintrc.json
+├── .config-overrides.js
+├── .jsonconfig.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+    ├── App.js
+    ├── index.js
+    ├── routes.js
+    ├── serviceWorker.js
+    ├── assets
+    |   └── images
+    |       ├── background.png
+    |       ├── background@2x.png
+    |       ├── Logo.png
+    |       └── Logo@2x.png
+    ├── configs
+    |   └── ReactotronConfig.png
+    ├── pages
+    |   |── Home
+    |   |   ├── index.js
+    |   |   └── styles.js
+    |   |── Layout
+    |   |   ├── index.js
+    |   |   └── LeftMenu.js
+    |   └── Login
+    |       ├── index.js
+    |       └── styles.js
+    ├── services
+    |   └── api.js
+    ├── stores
+    |   |── index.js
+    |   |── ducks
+    |   |   |── app.js
+    |   |   └── index.js
+    |   └── sagas
+    |       └── index.js
+    └── styles
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At this point everything should be ready to start to code your application
 
-### `yarn build`
+![](https://media.giphy.com/media/11ISwbgCxEzMyY/giphy.gif)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## User Guide
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The mio template provide a starter configurations to begin write your code, let´s know about the reason behind each folder.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### src
 
-### `yarn eject`
+The src is the folder where the project source files are located.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### assets
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The assets folder must contains all files which are static resources like images, css
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### configs
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The configs folder contains configurations files, in this case mio template has the ReactotronConfig.js
+Reactotron is an app that allow you inspecting your React Js apps.
+If you know more about Reactotron go to https://github.com/infinitered/reactotron11ISwbgCxEzMyY/giphy.gif
 
-## Learn More
+#### pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Each sub folder of the pages folder is an application page which is accessed through by a route except Layout folder.
+Layout folder as the name mean, it is where are the layout files that will be aplied on each render
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### services
 
-### Code Splitting
+The services folder contains files to connect an external api using axios
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### store
 
-### Analyzing the Bundle Size
+The store folder contains all structure to write the redux logic
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### styles
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The styles folder contains application global and theme styles.
