@@ -250,7 +250,6 @@ const Layout = ({ children, title, history, secundaryLeftMenu }) => {
         <Container maxWidth="xl" className={classes.container}>
           {children}
         </Container>
-        {/* <MadeWithLove /> */}
       </main>
     </div>
   );
