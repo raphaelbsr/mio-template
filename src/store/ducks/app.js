@@ -1,21 +1,20 @@
-import Immutable from 'seamless-immutable';
+import Immutable from "seamless-immutable";
 
 export const Types = {
-  SWITCH_SECUNDARY_LEFT_MENU: 'APP/SWITCH_SECUNDARY_LEFT_MENU',
+  SET_LOADING: "APP/SET_LOADING"
 };
 
 const initialState = Immutable({
-  secundaryLeftMenu: false,
   loading: false,
-  error: null,
+  error: null
 });
 
 export default function app(state = initialState, action) {
   switch (action.type) {
-    case Types.SWITCH_SECUNDARY_LEFT_MENU:
+    case Types.SET_LOADING:
       return {
         ...state,
-        secundaryLeftMenu: action.payload.isOpen,
+        loading: action.payload.isLoading
       };
     default:
       return state;
@@ -23,10 +22,10 @@ export default function app(state = initialState, action) {
 }
 
 export const Creators = {
-  switchSecundaryLeftMenu: isOpen => ({
-    type: Types.SWITCH_SECUNDARY_LEFT_MENU,
+  seLoading: isLoading => ({
+    type: Types.isLoading,
     payload: {
-      isOpen,
-    },
-  }),
+      isLoading
+    }
+  })
 };

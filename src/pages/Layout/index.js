@@ -21,7 +21,6 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Paper from "@material-ui/core/Paper";
 import Slide from "@material-ui/core/Slide";
 import LeftMenu from "./LeftMenu";
-import LeftMenuCadastros from "./LeftMenuCadastros";
 import { getData, logout } from "mio-library-autenticacao";
 import logoTopo from "../../assets/images/logoTopo.svg";
 
@@ -131,7 +130,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Layout = ({ children, title, history, secundaryLeftMenu }) => {
+const Layout = ({ children, title, history }) => {
   const classes = useStyles();
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -233,19 +232,6 @@ const Layout = ({ children, title, history, secundaryLeftMenu }) => {
           <LeftMenu />
         </List>
       </Drawer>
-      <Slide
-        direction="right"
-        in={secundaryLeftMenu}
-        mountOnEnter
-        unmountOnExit
-        className={classes.slide}
-      >
-        <Paper square elevation={2} className={classes.paper}>
-          <List className={classes.list}>
-            <LeftMenuCadastros />
-          </List>
-        </Paper>
-      </Slide>
       <main className={classes.content}>
         <Container maxWidth="xl" className={classes.container}>
           {children}
@@ -255,8 +241,6 @@ const Layout = ({ children, title, history, secundaryLeftMenu }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  secundaryLeftMenu: state.app.secundaryLeftMenu
-});
+const mapStateToProps = state => ({});
 
 export default connect(mapStateToProps)(Layout);
